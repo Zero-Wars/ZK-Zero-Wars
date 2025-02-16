@@ -35,7 +35,7 @@ return {
         idleAutoHeal = 250,
         idleTime = 200,
         leaveTracks = true,
-        maxDamage = 750,
+        maxDamage = 1200,
         maxSlope = 36,
         maxVelocity = 1.5,
         maxWaterDepth = 22,
@@ -49,7 +49,7 @@ return {
 
         sfxtypes = {explosiongenerators = {[[custom:NONE]]}},
 
-        sightDistance = 420,
+        sightDistance = 500,
         trackOffset = 0,
         trackStrength = 8,
         trackStretch = 0.8,
@@ -96,7 +96,7 @@ return {
                     light_radius = 320
                 },
 
-                damage = {default = 100},
+                damage = {default = 400},
 
                 explosionGenerator = [[custom:flash2purple]],
                 fireStarter = 30,
@@ -144,7 +144,7 @@ return {
                     reaim_time = 1
                 },
 
-                damage = {default = 500},
+                damage = {default = 750},
 
                 explosionGenerator = [[custom:riotballplus2_purple]],
                 explosionSpeed = 5,

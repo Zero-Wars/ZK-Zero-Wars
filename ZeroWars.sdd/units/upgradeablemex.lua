@@ -21,6 +21,7 @@ unitDef = {
     modelradius        = [[15]],
     removewait         = 1,
     removestop         = 1,
+    invulnerable = true
   },
 
   energyUpkeep           = 0,

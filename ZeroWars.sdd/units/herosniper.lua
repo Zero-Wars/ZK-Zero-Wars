@@ -27,7 +27,7 @@ return {
         idleTime = 200,
         leaveTracks = true,
         losEmitHeight = 40,
-        maxDamage = 750,
+        maxDamage = 800,
         maxSlope = 36,
         maxVelocity = 1.4,
         maxWaterDepth = 22,
@@ -41,7 +41,7 @@ return {
                 [[custom:WEAPEXP_PUFF]], [[custom:MISSILE_EXPLOSION]]
             }
         },
-        sightDistance = 400,
+        sightDistance = 500,
         trackOffset = 0,
         trackStrength = 8,
         trackStretch = 1,
@@ -77,7 +77,7 @@ return {
                     burst = Shared.BURST_RELIABLE,
                     single_hit = true
                 },
-                damage = {default = 200},
+                damage = {default = 400},
                 explosionGenerator = [[custom:gauss_hit_m]],
                 groundbounce = 1,
                 impulseBoost = 0,
@@ -117,8 +117,8 @@ return {
                     light_radius = 0,
                     restrict_in_widgets = 1
                 },
-                damage = {default = 1000000},
-                paralyzer = true,
+                damage = {default = 2500},
+                paralyzer = false,
                 paralyzeTime = 5,
                 explosionGenerator = [[custom:EMPMISSILE_EXPLOSION]],
                 fireTolerance = 512, -- 2.8 degrees

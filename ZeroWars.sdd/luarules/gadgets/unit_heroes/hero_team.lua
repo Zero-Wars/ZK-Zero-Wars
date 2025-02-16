@@ -14,14 +14,15 @@ function HeroTeam.new(allyTeamID, layout)
     return instance
 end
 
-
-function HeroTeam:GameStart()
-    local teamList = Spring.GetTeamList(self._allyTeamID)
-    local respawnPoint = self._layout.respawnPoint
-    for _, teamID in pairs(teamList) do
-        Spring.CreateUnit("chicken_drone_starter", respawnPoint.x, respawnPoint.y, respawnPoint.z, self._layout.faceDir, teamID)
-    end
-end
+--NOT USED
+-- function HeroTeam:GameStart()
+--     Spring.Echo("Game Start!!!")
+--     local teamList = Spring.GetTeamList(self._allyTeamID)
+--     local respawnPoint = self._layout.respawnPoint
+--     for _, teamID in pairs(teamList) do
+--         Spring.CreateUnit("chicken_drone_starter", respawnPoint.x, respawnPoint.y, respawnPoint.z, self._layout.faceDir, teamID)
+--     end
+-- end
 
 function HeroTeam:update(frame)
     self._respawnPool:update(frame)

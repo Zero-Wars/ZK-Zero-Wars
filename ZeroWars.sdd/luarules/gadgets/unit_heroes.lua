@@ -20,6 +20,7 @@ local Util = VFS.Include("luarules/gadgets/util/util.lua")
 local Layout = VFS.Include("luarules/configs/hero_layout.lua")
 local Hero = VFS.Include("luarules/gadgets/unit_heroes/hero.lua")
 local HeroTeams = VFS.Include("luarules/gadgets/unit_heroes/hero_team.lua")
+local config = VFS.Include("luarules/configs/zwconfig.lua")
 
 -- SyncedRead
 local spGetUnitHealth = Spring.GetUnitHealth
@@ -32,16 +33,32 @@ local CMD_HERO_UPGRADE = 49731
 local CMD_HERO_CHEAT_XP = 49732
 local CMD_HERO_CHEAT_Level = 49733
 local ALLOWED_ON_DEAD_CMD = {
-	CMD_HERO_UPGRADE,
+    CMD_HERO_UPGRADE,
 	CMD_HERO_CHEAT_XP,
 	CMD_HERO_CHEAT_Level
 }
 
+local CMD_HERO_TELEPORT = 49734
+
+local teleportCmdDesc = {
+    id = CMD_HERO_TELEPORT,
+    type     = CMDTYPE.ICON,
+    name     = 'Teleport hero to safety',
+    action   = 'hero_teleport',
+    texture  = 'icons/pw_warpgate.png'
+}
+
 local heroes = {}
 local heroTeams = {}
+local sides = {}
+currentFrame = Spring.GetGameFrame()
 
 local function isHero(unitDefID)
-    return UnitDefs[unitDefID].customParams.hero
+    return (UnitDefs[unitDefID].customParams.hero)
+end
+
+local function isComDrone(unitDefID)
+    return (UnitDefs[unitDefID].customParams.com_drone)
 end
 
 local function onHeroKill(unitID, attackerID, attackerTeam)
@@ -80,12 +97,19 @@ function gadget:GamePreload()
     allyStarts.Right = tonumber(allyStarts.Right or 0)
     heroTeams[allyStarts.Left] = HeroTeams.new(allyStarts.Left, Layout.Left)
     heroTeams[allyStarts.Right] = HeroTeams.new(allyStarts.Right, Layout.Right)
+    sides[allyStarts.Left] = config.Left
+    sides[allyStarts.Right] = config.Right
 end
+
 
 function gadget:GameFrame(frame)
     if frame % 30 == 0 then
         for _, team in pairs(heroTeams) do
             team:update(frame)
+        end
+
+        for _, hero in pairs(heroes) do
+            hero:update(frame)
         end
     end
 end
@@ -96,6 +120,15 @@ end
 function gadget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag)
     if cmdID == CMD_HERO_UPGRADE and heroes[unitID] then
         heroes[unitID]:upgrade(unitDefID, unitTeam, "path" .. cmdParams[1])
+    end
+
+    if cmdID == CMD_HERO_TELEPORT and heroes[unitID] then
+        local allyTeamID = spGetUnitAllyTeam(unitID)
+        local side = sides[allyTeamID]
+        local dRect = side.deployRect
+        local heroX = dRect.x + (dRect.width * math.random(10, 90) / 100)
+        local heroZ = dRect.z + (dRect.height * math.random(10, 90) / 100)
+        heroes[unitID]:teleport(heroX, heroZ)
     end
 
     if Spring.IsCheatingEnabled() then
@@ -109,6 +142,7 @@ function gadget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOp
     end
 end
 
+
 -------------------------------------
 -- Add hero when it's created
 -------------------------------------
@@ -118,6 +152,7 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
         local hero = Hero.new(unitID, unitDefID)
         heroes[unitID] = hero
         heroTeams[allyTeamID]:addHero(unitID, hero)
+        Spring.InsertUnitCmdDesc(unitID, teleportCmdDesc)
     end
 end
 
@@ -145,11 +180,29 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID)
     onKill(unitID, unitDefID, attackerID)
 end
 
+local function ReDeployDrone(teamID, allyTeamID)
+    local side = sides[allyTeamID]
+    local dRect = side.deployRect
+    local heroX = dRect.x + (dRect.width * math.random(10, 90) / 100)
+    local heroZ = dRect.z + (dRect.height * math.random(10, 90) / 100)
+    Spring.CreateUnit("chicken_drone_starter", heroX, 128, heroZ, side.faceDir, teamID)
+end
+
 -------------------------------------
 -- Teleport hero when it's about to die
 -- Give attackers xp on hero kill
 -------------------------------------
 function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID)
+    if isComDrone(unitDefID) and not paralyzer then
+        local heroHP = spGetUnitHealth(unitID)
+        local allyTeamID = spGetUnitAllyTeam(unitID)
+        if heroHP <= damage then
+            if attackerID then -- attackerID not gauranteed
+                ReDeployDrone(unitTeam, allyTeamID)
+            end
+            return damage, 0
+        end
+    end
     if heroes[unitID] and not paralyzer then
         local heroHP = spGetUnitHealth(unitID)
         if heroHP <= damage then

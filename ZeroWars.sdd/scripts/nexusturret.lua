@@ -27,6 +27,8 @@ function script.QueryWeapon(num)
         return flare
     elseif num == 2 then
         return turret
+    elseif num == 3 then
+        return turret
     end
 end
 

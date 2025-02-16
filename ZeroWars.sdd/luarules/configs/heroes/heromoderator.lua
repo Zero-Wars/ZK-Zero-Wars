@@ -6,7 +6,7 @@ local heromoderator = {
         {"EnableCommand", CMD.MANUALFIRE, false}
     },
     onLevelUp = {
-        {"HP", 0.15},
+        {"HP", 0.25},
         {"Scale", 0.08}
     },
     path1 = {
