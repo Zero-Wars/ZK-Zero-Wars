@@ -21,6 +21,7 @@ unitDef = {
       [[factoryplane]],
       [[factorygunship]],
       [[factoryship]],
+      [[cstriderfunnelweb]]
     },
 
     buildPic            = [[amphcon.png]],

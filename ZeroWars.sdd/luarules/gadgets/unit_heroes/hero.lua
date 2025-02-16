@@ -14,6 +14,7 @@ local HeroUnitDefs = VFS.Include("luarules/configs/hero_defs.lua")
 
 local LABEL_SIZE = 12
 local LABEL_HEIGHT = 30
+local currentFrame = 0
 
 local function levelXP(level) return 100 * level * level + 500 end
 
@@ -59,8 +60,16 @@ function Hero.new(unitID, unitDefID)
 end
 
 function Hero:update(frame)
+    currentFrame = frame
     if self._isDead and self._respawnFrame == -1 then
         self._respawnFrame = frame
+    end
+    if self._isTeleporting then
+        if self._teleportFrame <= frame then
+            Spring.SetUnitHealth(self._ID, {paralyze = 0})
+            self._isTeleporting = false
+            spSetUnitPosition(self._ID, self._teleportDestination.x, self._teleportDestination.y, self._teleportDestination.z)
+        end
     end
 end
 
@@ -141,6 +150,14 @@ function Hero:getXP() return spGetUnitRulesParam(self._ID, "xp") end
 function Hero:getKillXP()
     local level = spGetUnitRulesParam(self._ID, "level")
     return levelXP(level) / 3
+end
+
+function Hero:teleport(destX, destZ)
+    local teleportDuration = 5
+    self._teleportFrame = (30 * teleportDuration) + currentFrame
+    self._isTeleporting = true;
+    self._teleportDestination = {x = destX, y = 128, z = destZ}
+    Spring.SetUnitHealth(self._ID, {paralyze = 99999999})
 end
 
 function Hero:getTotalXP()

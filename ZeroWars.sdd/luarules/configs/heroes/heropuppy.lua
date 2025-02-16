@@ -4,10 +4,10 @@ local heropuppy = {
     onReady = {
         {"Scale", 0},
         {"EnableCommand", CMD.MANUALFIRE, false},
-        {"EnableCommand", CMD_JUMP, false}
+        {"EnableCommand", CMD_JUMP, true}
     },
     onLevelUp = {
-        {"HP", 0.15},
+        {"HP", 0.25},
         {"Scale", 0.10}
     },
     path1 = {
@@ -81,10 +81,10 @@ local heropuppy = {
     },
     path3 = {
         {
-            name = "Jump",
-            desc = "Unlock Jump \n Required Upgrades 0",
+            name = "Faster Repair",
+            desc = "+25% Faster Regen Time \n Required Upgrades 0",
             params = {
-                {"EnableCommand", CMD_JUMP, true}
+                {"IdleRegen", -0.25, 0}
             },
             requiredUpgrades = 0
         },

@@ -6,7 +6,7 @@ local heroknight = {
         {"EnableCommand", CMD.MANUALFIRE, false}
     },
     onLevelUp = {
-        {"HP", 0.1},
+        {"HP", 0.25},
         {"Scale", 0.05}
     },
     path1 = {

@@ -4,11 +4,11 @@
 --
 
 local mapinfo = {
-	name        = "ZeroWars",
+	name        = "ZeroWars Rebalance",
 	shortname   = "zwars",
 	description = "made for zero-k",
 	author      = "petturtle",
-	version     = "v2.1.9",
+	version     = "v2.1.9.004",
 	modtype     = 3,
 	depend      = {"Map Helper v1"},
 	replace     = {},

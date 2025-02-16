@@ -79,42 +79,45 @@ local herosniper = {
     },
     path3 = {
         {
-            name = "Improved Servo",
-            desc = "+20% Movement Speed \n Required Upgrades 0",
+            name = "Light Armour",
+            desc = "+500 HP \n Required Upgrades 0",
             params = {
-                {"MoveSpeed", "0.20"}
+                {"Armour", "500"}
             },
             requiredUpgrades = 0
         },
         {
-            name = "Advanced Motors",
-            desc = "+20% Movement Speed \n Required Upgrades 1",
+            name = "Medium Armour",
+            desc = "+500 HP \n Required Upgrades 1",
             params = {
-                {"MoveSpeed", "0.20"}
+                {"Armour", "500"}
             },
             requiredUpgrades = 1
         },
         {
-            name = "Industrial Motors",
-            desc = "+20% Movement Speed \n Required Upgrades 4",
+            name = "Heavy Armour",
+            desc = "+500 HP \n Required Upgrades 4",
             params = {
-                {"MoveSpeed", "0.20"}
+                { "Armour", "500"}
             },
             requiredUpgrades = 4
         },
         {
-            name = "Experimental Servo",
-            desc = "+20% Movement Speed \n Required Upgrades 6",
+            name = "Ultimate Armour",
+            desc = "+500 HP \n Required Upgrades 6",
             params = {
-                {"MoveSpeed", "0.20"}
+                {
+                    "Armour",
+                    "500"
+                }
             },
             requiredUpgrades = 6
         }
     },
     path4 = {
         {
-            name = "Paralyze Rifle",
-            desc = "Unlock Shock Rifle \n Required Upgrades 6",
+            name = "Higher Calibre Rifle",
+            desc = "Higher Calibre Rifle \n Required Upgrades 6",
             params = {
                 {"EnableCommand", CMD.MANUALFIRE, true}
             },
@@ -122,27 +125,27 @@ local herosniper = {
         },
         {
             name = "Higher Calibre",
-            desc = "+40% Paralyze Time \n +25% AOE \n Required Upgrades 8",
+            desc = "+50% Damage \n +25% AOE \n Required Upgrades 8",
             params = {
-                {"WeaponParalyzeTime", 2, 0.40},
+                {"WeaponDamage", 2, 0.50},
                 {"WeaponAOE", 2, 0.25}
             },
             requiredUpgrades = 8
         },
         {
             name = "H.E.A.T Ammo",
-            desc = "+40% Paralyze Time \n +25% AOE \n Required Upgrades 10",
+            desc = "+50% Damage \n +25% AOE \n Required Upgrades 10",
             params = {
-                {"WeaponParalyzeTime", 2, 0.40},
+                {"WeaponDamage", 2, 0.50},
                 {"WeaponAOE", 2, 0.25}
             },
             requiredUpgrades = 10
         },
         {
             name = "Max Calibre",
-            desc = "+40% Paralyze Time \n +25% AOE \n Required Upgrades 12",
+            desc = "+50% WeaponDamage \n +25% AOE \n Required Upgrades 12",
             params = {
-                {"WeaponParalyzeTime", 2, 0.40},
+                {"WeaponDamage", 2, 0.50},
                 {"WeaponAOE", 2, 0.25}
             },
             requiredUpgrades = 12

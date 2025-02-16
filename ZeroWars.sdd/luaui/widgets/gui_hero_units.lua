@@ -60,18 +60,17 @@ local function CreateWindow()
 		classname = "main_window",
 		x = 0,
 		y = 0,
-		width = 201,
+		width = 250,
 		height = 332,
-		minWidth = 201,
+		minWidth = 250,
 		minHeight = 332,
 		color = {1, 1, 1, 0.5},
 		backgroundColor = {0, 0, 0, 0},
 		padding = {0, 0, 0, 0},
 		dockable = true,
 		draggable = true,
-		resizable = false,
+		resizable = true,
 		tweakDraggable = true,
-		tweakDraggable = false,
 		minimizanle = false,
 		parent = screen0
 	}
@@ -109,7 +108,7 @@ local function CreateWindow()
 		upgradeButtons[i] =
 			Chili.Button:New {
 			caption = "caption",
-			font = {size = 20, outline = true, color = cyan, outlineWidth = 2, outlineWeight = 2},
+			font = {size = 16, outline = true, color = cyan, outlineWidth = 2, outlineWeight = 2},
 			x = 0,
 			y = 0,
 			right = 0,
@@ -219,7 +218,7 @@ local function toggleCheats(state)
 end
 
 local function setUpdateParams(id, params, level)
-	upgradeButtons[id]:SetCaption(level .. ". " .. params.name)
+	upgradeButtons[id]:SetCaption(level .. ". " .. params.name .. " Lvl:".. params.requiredUpgrades + 1)
 	upgradeButtons[id].tooltip = params.desc
 end
 

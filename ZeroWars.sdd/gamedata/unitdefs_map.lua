@@ -3,6 +3,7 @@ local OverwriteTableInplace = Spring.Utilities.OverwriteTableInplace
 
 -- replace shipFactory with chickenFactory
 UnitDefs["factoryship"] = UnitDefs["factorychicken"]
+UnitDefs["factorycloak"] = UnitDefs["factorycloak1"]
 
 for unitname, ud in pairs(UnitDefs) do
     if (unitname:sub(1, 7) == "chicken") then

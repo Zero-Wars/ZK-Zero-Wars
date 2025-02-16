@@ -37,27 +37,52 @@ local mexUpgradeCmdDesc = {
 local upgrades = {
     {
         income = 2,
-        cost = 300,
+        cost = 250,
+        scale = 1.1,
+    },
+    {
+        income = 2,
+        cost = 250,
         scale = 1.2,
     },
     {
         income = 2,
         cost = 500,
+        scale = 1.3,
+    },
+    {
+        income = 2,
+        cost = 1000,
         scale = 1.4,
     },
     {
-        income = 3,
-        cost = 1050,
+        income = 2,
+        cost = 1000,
+        scale = 1.5,
+    },
+    {
+        income = 2,
+        cost = 1000,
         scale = 1.6,
     },
     {
-        income = 4,
+        income = 2,
+        cost = 1500,
+        scale = 1.7,
+    },
+    {
+        income = 2,
         cost = 2000,
         scale = 1.8,
     },
     {
-        income = 5,
-        cost = 4000,
+        income = 2,
+        cost = 3000,
+        scale = 1.9,
+    },
+    {
+        income = 2,
+        cost = 3000,
         scale = 2.0,
     }
 }

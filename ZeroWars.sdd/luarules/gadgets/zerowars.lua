@@ -54,7 +54,7 @@ local function InitSide(side, allyTeamID, enemyAllyTeamID)
     GG.EventOnUnitDeath(tID, function ()
         local teamList = Spring.GetTeamList(enemyAllyTeamID)
         for i = 1, #teamList do
-            Spring.AddTeamResource(teamList[i], "metal", 800)
+            Spring.AddTeamResource(teamList[i], "metal", 1500)
         end
     end)
 

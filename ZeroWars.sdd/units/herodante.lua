@@ -25,7 +25,8 @@ return {
         idleTime = 200,
         leaveTracks = true,
         losEmitHeight = 50,
-        maxDamage = 1250,
+        
+        maxDamage = 2500,
         maxSlope = 36,
         maxVelocity = 1.75,
         maxWaterDepth = 22,
@@ -106,7 +107,7 @@ return {
                     reaim_time = 1
                 },
 
-                damage = {default = 10},
+                damage = {default = 20},
 
                 duration = 0.01,
                 explosionGenerator = [[custom:SMOKE]],
@@ -151,7 +152,7 @@ return {
                     reaim_time = 1
                 },
 
-                damage = {default = 25},
+                damage = {default = 50},
 
                 duration = 0.3,
                 dynDamageExp = 1,
@@ -195,7 +196,7 @@ return {
                     reaim_time = 1
                 },
 
-                damage = {default = 80},
+                damage = {default = 160},
 
                 edgeEffectiveness = 0.75,
                 explosionGenerator = [[custom:napalm_phoenix]],
@@ -259,7 +260,7 @@ return {
                 interceptedByShieldType = 2,
                 model = [[wep_m_hailstorm.s3o]],
                 projectiles = 2,
-                range = 460,
+                range = 520,
                 reloadtime = 20,
                 smokeTrail = true,
                 soundHit = [[weapon/missile/rapid_rocket_hit]],
