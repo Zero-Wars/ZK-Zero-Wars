@@ -450,5 +450,31 @@ local unit_tweaks = {
         metalCost   = 4000,
     }
 }
+if Game.modShortName == "ZKFW" then -- future wars uses a different knight and adds a few units. Reflect that here.
+	unit_tweaks["heroknight"] = {
+		collisionVolumeOffsets = "0 0 0",
+		collisionVolumeScales  = "36 60 36",
+		collisionVolumeType    = "cylY",
+		selectionVolumeOffsets = "0 0 0",
+		selectionVolumeScales  = "45 45 45",
+		selectionVolumeType    = "ellipsoid",
+		script = "fw_heroknight.lua",
+	}
+	unit_tweaks["cstriderfunnelweb"] = {
+		buildoptions        = {
+     			[[staticmissilesilo]],
+      			[[striderantiheavy]],
+        		[[striderscorpion]],
+        		[[striderdante]],
+        		[[striderarty]],
+        		[[cstriderfunnelweb]],
+        		[[striderbantha]],
+        		[[striderdetriment]],
+        		[[nebula]],
+			    [[striderrazorback]],
+			    [[striderraider]],
+    		}
+	}
+end
 
 return unit_tweaks
