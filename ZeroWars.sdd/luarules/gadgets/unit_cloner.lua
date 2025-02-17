@@ -77,7 +77,7 @@ local function cloneUnit(unitID, x, y, z, faceDir, teamID)
 end
 
 function gadget:Initialize()
-    if Game.modShortName ~= "ZK" then
+    if Game.modShortName ~= "ZK" and Game.modShortName ~= "ZKFW" then
         gadgetHandler:RemoveGadget()
         return
     end
