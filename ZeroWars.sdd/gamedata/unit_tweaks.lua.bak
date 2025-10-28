@@ -444,13 +444,11 @@ local unit_tweaks = {
             },
         },
     },
-    spiderassault = {  footprintX = 3, footprintZ = 3, collisionVolumeOffsets = [[0 3 0]], selectionVolumeOffsets = [[0 0 0]]},
     striderarty = {
         name                   = [[Merlin]],
         description            = [[Heavy Saturation Artillery Strider]],
         metalCost   = 4000,
-    }, 
-    tankheavyarty = { weaponDefs = { PLASMA = { range = 700, reloadtime = 0.111 } } },
+    }
 }
 if Game.modShortName == "ZKFW" then -- future wars uses a different knight and adds a few units. Reflect that here.
 	unit_tweaks["heroknight"] = {
