@@ -14,7 +14,8 @@ local heroknight = {
             name = "Plasma Upgrade",
             desc = "+25% Damage \n Required Upgrades 0",
             params = {
-                {"WeaponDamage", 1, 0.25}
+                {"WeaponDamage", 1, 0.25},
+                {"WeaponDamage", 2, 0.25}
             },
             requiredUpgrades = 0
         },
@@ -22,7 +23,8 @@ local heroknight = {
             name = "Ionized plasma",
             desc = "+25% Damage \n Required Upgrades 1",
             params = {
-                {"WeaponDamage", 1, 0.25}
+                {"WeaponDamage", 1, 0.25},
+                {"WeaponDamage", 2, 0.25}
             },
             requiredUpgrades = 1
         },
@@ -30,7 +32,8 @@ local heroknight = {
             name = "Tesla Upgrade",
             desc = "+25% Damage \n Required Upgrades 4",
             params = {
-                {"WeaponDamage", 1, 0.25}
+                {"WeaponDamage", 1, 0.25},
+                {"WeaponDamage", 2, 0.25}
             },
             requiredUpgrades = 4
         },
@@ -38,7 +41,8 @@ local heroknight = {
             name = "Sun Core",
             desc = "+25% Damage \n Required Upgrades 6",
             params = {
-                {"WeaponDamage", 1, 0.25}
+                {"WeaponDamage", 1, 0.25},
+                {"WeaponDamage", 2, 0.25}
             },
             requiredUpgrades = 6
         }
@@ -48,7 +52,8 @@ local heroknight = {
             name = "Lazer Cooling",
             desc = "+15% Fire Rate \n Required Upgrades 0",
             params = {
-                {"WeaponReload", 1, 0.15}
+                {"WeaponReload", 1, 0.15},
+                {"WeaponReload", 2, 0.15},
             },
             requiredUpgrades = 0
         },
@@ -56,7 +61,8 @@ local heroknight = {
             name = "Heat Pipes",
             desc = "+15% Fire Rate \n Required Upgrades 1",
             params = {
-                {"WeaponReload", 1, 0.15}
+                {"WeaponReload", 1, 0.15},
+                {"WeaponReload", 2, 0.15},
             },
             requiredUpgrades = 1
         },
@@ -64,7 +70,8 @@ local heroknight = {
             name = "Nitrogen Tank",
             desc = "+15% Fire Rate \n Required Upgrades 4",
             params = {
-                {"WeaponReload", 1, 0.15}
+                {"WeaponReload", 1, 0.15},
+                {"WeaponReload", 2, 0.15},
             },
             requiredUpgrades = 4
         },
@@ -72,7 +79,8 @@ local heroknight = {
             name = "Sub Zero",
             desc = "+15% Fire Rate \n Required Upgrades 6",
             params = {
-                {"WeaponReload", 1, 0.15}
+                {"WeaponReload", 1, 0.15},
+                {"WeaponReload", 2, 0.15},
             },
             requiredUpgrades = 6
         }
@@ -130,7 +138,7 @@ local heroknight = {
             name = "Extra Gauss",
             desc = "+1 Burst \n Required Upgrades 8",
             params = {
-                {"WeaponBurst", 2, 1}
+                {"WeaponBurst", 3, 1}
             },
             requiredUpgrades = 8
         },
@@ -138,7 +146,7 @@ local heroknight = {
             name = "Gauss Array",
             desc = "+1 Burst \n Required Upgrades 10",
             params = {
-                {"WeaponBurst", 2, 1}
+                {"WeaponBurst", 3, 1}
             },
             requiredUpgrades = 10
         },
@@ -146,7 +154,7 @@ local heroknight = {
             name = "Recursive Gauss",
             desc = "+2 Burst \n Required Upgrades 12",
             params = {
-                {"WeaponBurst", 2, 2}
+                {"WeaponBurst", 3, 2}
             },
             requiredUpgrades = 12
         }

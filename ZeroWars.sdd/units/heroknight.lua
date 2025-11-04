@@ -61,7 +61,11 @@ return {
                 def = [[GAUSS]],
                 badTargetCategory = [[FIXEDWING]],
                 onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]]
-            }
+            },{
+                def                = [[LIGHTNING]],
+                badTargetCategory  = [[FIXEDWING]],
+                onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]],
+            },
         },
         weaponDefs = {
             MAINLASER = {
@@ -87,6 +91,49 @@ return {
                 turret = true,
                 weaponType = [[LaserCannon]],
                 weaponVelocity = 1000
+            },
+            LIGHTNING = {
+                name                    = [[Lightning Gun]],
+                areaOfEffect            = 8,
+                craterBoost             = 0,
+                craterMult              = 0,
+
+                customParams            = {
+                    extra_damage = 720,
+                    
+                    light_camera_height = 1600,
+                    light_color = [[0.85 0.85 1.2]],
+                    light_radius = 200,
+                    burst = Shared.BURST_RELIABLE,
+                },
+
+                cylinderTargeting      = 0,
+
+                damage                  = {
+                    default        = 460,
+                },
+
+                duration                = 10,
+                explosionGenerator      = [[custom:LIGHTNINGPLOSION]],
+                fireStarter             = 50,
+                impactOnly              = true,
+                impulseBoost            = 0,
+                impulseFactor           = 0,
+                intensity               = 12,
+                interceptedByShieldType = 1,
+                paralyzeTime            = 2,
+                range                   = 440,
+                reloadtime              = 2.2,
+                rgbColor                = [[0.5 0.5 1]],
+                soundStart              = [[weapon/more_lightning_fast]],
+                soundTrigger            = true,
+                sprayAngle              = 900,
+                texture1                = [[lightning]],
+                thickness               = 10,
+                turret                  = true,
+                waterweapon             = false,
+                weaponType              = [[LightningCannon]],
+                weaponVelocity          = 400,
             },
             GAUSS = {
                 name = [[Gauss Battery]],
