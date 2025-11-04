@@ -18,7 +18,7 @@ return { cstriderdetriment = {
   corpse                 = [[DEAD]],
 
   customParams           = {
-    canjump               = 1,
+    canjump               = 0,
     jump_range            = 960,
     jump_height           = 500,
     jump_speed            = 8,
