@@ -444,7 +444,7 @@ local unit_tweaks = {
             },
         },
     },
-    spiderassault = {  footprintX = 3, footprintZ = 3, collisionVolumeOffsets = [[0 3 0]], selectionVolumeOffsets = [[0 0 0]]},
+    spiderassault = { footprintX = 3, footprintZ = 3 },
     striderarty = {
         name                   = [[Merlin]],
         description            = [[Heavy Saturation Artillery Strider]],
