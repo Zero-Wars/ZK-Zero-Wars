@@ -1,8 +1,8 @@
 return {
     herosniper = {
         unitname = [[herosniper]],
-        name = [[Hero Phantom]],
-        description = [[Hero Sniper Bot]],
+        name = [[The blind rifleman]],
+        description = [[While his gauss rifle hits hard and has a good range his vision is poor and relies on his team to spot targets to shoot]],
         acceleration = 0.9,
         brakeRate = 1.2,
         metalCost = 1500,

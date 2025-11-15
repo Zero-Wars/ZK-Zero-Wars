@@ -1,8 +1,8 @@
 return {
     heromoderator = {
         unitname = [[heromoderator]],
-        name = [[Hero Moderator]],
-        description = [[Hero Disruptor Skirmisher Walker]],
+        name = [[Aquabot]],
+        description = [[Modified lifeguard, equiped with a slow beam to stop people running next to the pool. Not to be messed with!]],
         acceleration = 0.6,
         activateWhenBuilt = true,
         brakeRate = 3.6,

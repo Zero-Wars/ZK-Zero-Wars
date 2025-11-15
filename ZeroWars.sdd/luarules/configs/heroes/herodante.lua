@@ -8,8 +8,9 @@ local herodante = {
         {"EnableCommand", CMD.MANUALFIRE, false}
     }, 
     onLevelUp = {
-        {"HP", 0.25},
-        {"Scale", 0.04}
+        {"HP", 0.30},
+        {"Scale", 0.04},
+        {"MoveSpeed", 0.01}
     },
     path1 = {
         {

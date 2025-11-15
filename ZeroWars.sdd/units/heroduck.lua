@@ -1,8 +1,8 @@
 return {
     heroduck = {
         unitname = [[heroduck]],
-        name = [[Hero Duck]],
-        description = [[Hero Duck]],
+        name = [[Chonk]],
+        description = [[It’s common knowledge that a goose will defend its nest by hurling grenades at anything suspicious. Sharp eyesight and E.M.P. blaster]],
         acceleration = 0.54,
         activateWhenBuilt = true,
         brakeRate = 2.25,

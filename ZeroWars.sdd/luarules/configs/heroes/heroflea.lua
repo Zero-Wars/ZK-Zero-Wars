@@ -52,7 +52,7 @@ local heroflea = {
             name = "WeaponRange",
             desc = "+10% Weapon Range \n Required Upgrades 0",
             params = {
-                { "WeaponRange", 1, 0.1 }
+                { "WeaponRange", 1, 0.2 }
             },
             requiredUpgrades = 0
         },
@@ -92,9 +92,9 @@ local heroflea = {
         },
         {
             name = "Ultra-Light Armour",
-            desc = "+20% Movement Speed\n Required Upgrades 1",
+            desc = "+10% Movement Speed\n Required Upgrades 1",
             params = {
-                { "MoveSpeed", "0.20" }
+                { "MoveSpeed", "0.08" }
             },
             requiredUpgrades = 1
         },
@@ -111,10 +111,10 @@ local heroflea = {
         },
         {
             name = "Ultimate Ultra Armour",
-            desc = "+500 HP and +20% Movement Speed \n Required Upgrades 6",
+            desc = "+500 HP and +10% Movement Speed \n Required Upgrades 6",
             params = {
                 { "Armour",    "500" },
-                { "MoveSpeed", "0.20" }
+                { "MoveSpeed", "0.08" }
             },
             requiredUpgrades = 6
         }

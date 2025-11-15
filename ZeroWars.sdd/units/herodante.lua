@@ -3,7 +3,7 @@ return {
         unitname = [[herodante]],
         name = [[Hero Dante]],
         description = [[Hero Assault/Riot Strider]],
-        acceleration = 0.295,
+        acceleration = 1,--0.295,
         brakeRate = 1.435,
         metalCost = 1500,
         builder = false,
@@ -14,6 +14,7 @@ return {
         canPatrol = true,
         category = [[LAND]],
         corpse = [[DEAD]],
+        speed = 59.5,
 
         customParams = {hero = true, modelradius = [[15]], aim_lookahead = 200},
 
@@ -51,7 +52,7 @@ return {
         trackStretch = 0.6,
         trackType = [[ComTrack]],
         trackWidth = 38,
-        turnRate = 597,
+        turnRate = 800,--597,
         upright = true,
         reclaimable = false,
         workerTime = 0,
@@ -193,7 +194,8 @@ return {
                     setunitsonfire = "1",
                     burnchance = "1",
                     burntime = [[90]],
-                    reaim_time = 1
+                    reaim_time = 1,
+                    burst = Shared.BURST_UNRELIABLE,
                 },
 
                 damage = {default = 160},

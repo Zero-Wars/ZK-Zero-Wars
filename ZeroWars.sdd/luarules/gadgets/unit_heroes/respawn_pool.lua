@@ -36,7 +36,8 @@ end
 -- @param hero hero class
 -------------------------------------
 function RespawnPool:_OnHeroDeath(hero, currentFrame, deathFrame)
-    local respawnFrame = 4 * (30) * (hero:getLevel() + 1) + currentFrame
+    --local respawnFrame = 4 * (30) * (hero:getLevel() + 1) + currentFrame
+    local respawnFrame = 3 * (30) * (hero:getLevel() + 1) + currentFrame
     table.insert(self._pool, {hero = hero, deathFrame = deathFrame, respawnFrame = respawnFrame})
 
     hero:heal()
@@ -56,7 +57,7 @@ function RespawnPool:_OnHeroUpdate(hero, poolID, currentFrame, deathFrame, respa
     else
         local buildAmount = (currentFrame - deathFrame) / math.max(1, respawnFrame - deathFrame)
         Spring.SetUnitHealth(hero._ID, {build = buildAmount})
-        hero:setPosition(self._spawnPoint)
+        hero:setPosition(self._deathPoint)
     end
 end
 

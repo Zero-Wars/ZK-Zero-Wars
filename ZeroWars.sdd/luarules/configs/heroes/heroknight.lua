@@ -6,7 +6,7 @@ local heroknight = {
         {"EnableCommand", CMD.MANUALFIRE, false}
     },
     onLevelUp = {
-        {"HP", 0.25},
+        {"HP", 0.35},
         {"Scale", 0.05}
     },
     path1 = {
@@ -138,7 +138,8 @@ local heroknight = {
             name = "Extra Gauss",
             desc = "+1 Burst \n Required Upgrades 8",
             params = {
-                {"WeaponBurst", 3, 1}
+                {"WeaponBurst", 3, 4},
+                --{"WeaponDamage", 3, 0.25},
             },
             requiredUpgrades = 8
         },
@@ -146,7 +147,8 @@ local heroknight = {
             name = "Gauss Array",
             desc = "+1 Burst \n Required Upgrades 10",
             params = {
-                {"WeaponBurst", 3, 1}
+                {"WeaponBurst", 3, 4},
+                --{"WeaponDamage", 3, 0.25},
             },
             requiredUpgrades = 10
         },
@@ -154,7 +156,8 @@ local heroknight = {
             name = "Recursive Gauss",
             desc = "+2 Burst \n Required Upgrades 12",
             params = {
-                {"WeaponBurst", 3, 2}
+                {"WeaponBurst", 3, 4},
+                --{"WeaponDamage", 3, 0.25},
             },
             requiredUpgrades = 12
         }

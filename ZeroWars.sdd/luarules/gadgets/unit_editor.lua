@@ -86,6 +86,7 @@ end
 
 function UnitEditor.MoveSpeed(unit, multiplier)
     unit.moveSpeed = (unit.moveSpeed or 1) + multiplier
+    Spring.SetUnitRulesParam(unit.unitID, "selfMoveSpeedChange", unit.moveSpeed)
     addEffect(unit.unitID, "move_speed", {
         move = unit.moveSpeed
     })
@@ -137,7 +138,9 @@ end
 
 function UnitEditor.WeaponRange(unit, weaponID, multiplier)
     local weapon = unit.weapons[weaponID]
+    local originaRange = WeaponDefs[weapon.ID].range
     weapon.range = (weapon.range or 1) + multiplier
+    Spring.SetUnitWeaponState(unit.unitID, weaponID, "range", originaRange * weapon.range)
     addEffect(unit.unitID, "weapon_range_" .. weaponID, {
         range = weapon.range,
         weaponNum = weaponID
@@ -146,9 +149,10 @@ end
 
 function UnitEditor.WeaponBurst(unit, weaponID, increase)
     local weapon = unit.weapons[weaponID]
-    local originalBurst = WeaponDefs[weapon.ID].salvoSize
-    units.burst = (units.burst or 0) + increase
-    Spring.SetUnitWeaponState(unit.unitID, weaponID, "burst", originalBurst + units.burst)
+    local originalBurst = WeaponDefs[weapon.ID].burst or 1
+    weapon.burst = (weapon.burst or 0) + increase
+    Spring.Echo(originalBurst, increase, weapon.burst)
+    Spring.SetUnitWeaponState(unit.unitID, weaponID, "burst", originalBurst + weapon.burst)
 end
 
 function UnitEditor.WeaponAOE(unit, weaponID, multiplier)

@@ -57,14 +57,14 @@ return {
                 def = [[MAINLASER]],
                 badTargetCategory = [[FIXEDWING]],
                 onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]]
-            }, {
-                def = [[GAUSS]],
-                badTargetCategory = [[FIXEDWING]],
-                onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]]
             },{
                 def                = [[LIGHTNING]],
                 badTargetCategory  = [[FIXEDWING]],
                 onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]],
+            },{
+                def = [[GAUSS]],
+                badTargetCategory = [[FIXEDWING]],
+                onlyTargetCategory = [[FIXEDWING LAND SINK TURRET SHIP SWIM FLOAT GUNSHIP HOVER]]
             },
         },
         weaponDefs = {
@@ -82,7 +82,7 @@ return {
                 impulseFactor = 0,
                 interceptedByShieldType = 1,
                 range = 440,
-                reloadtime = 0.2,
+                reloadtime = 0.12,
                 rgbColor = [[0.2 0.2 1]],
                 soundHit = [[weapon/laser/medlaser_hit]],
                 soundStart = [[weapon/laser/medlaser_fire]],
@@ -99,7 +99,7 @@ return {
                 craterMult              = 0,
 
                 customParams            = {
-                    extra_damage = 720,
+                    extra_damage = 500,
                     
                     light_camera_height = 1600,
                     light_color = [[0.85 0.85 1.2]],
@@ -110,7 +110,7 @@ return {
                 cylinderTargeting      = 0,
 
                 damage                  = {
-                    default        = 460,
+                    default        = 275,
                 },
 
                 duration                = 10,
@@ -123,7 +123,7 @@ return {
                 interceptedByShieldType = 1,
                 paralyzeTime            = 2,
                 range                   = 440,
-                reloadtime              = 2.2,
+                reloadtime              = 4,
                 rgbColor                = [[0.5 0.5 1]],
                 soundStart              = [[weapon/more_lightning_fast]],
                 soundTrigger            = true,
@@ -145,15 +145,15 @@ return {
                 alphaDecay = 0.12,
                 areaOfEffect = 16,
                 avoidfeature = false,
-                bouncerebound = 0.15,
+                bouncerebound = 0.12,
                 bounceslip = 1,
-                burst = 2,
-                burstrate = 0.2,
+                burst = 10, --6
+                burstrate = 0.1, --0.15
                 cegTag = [[gauss_tag_h]],
                 craterBoost = 0,
                 craterMult = 0,
                 customParams = {single_hit_multi = true, reaim_time = 1},
-                damage = {default = 700},
+                damage = {default = 350},
                 explosionGenerator = [[custom:gauss_hit_h]],
                 groundbounce = 1,
                 impactOnly = true,
@@ -171,7 +171,7 @@ return {
                 sizeDecay = -0.1,
                 soundHit = [[weapon/gauss_hit]],
                 soundStart = [[weapon/gauss_fire]],
-                sprayangle = 800,
+                sprayangle = 1600,
                 stages = 32,
                 tolerance = 4096,
                 turret = true,

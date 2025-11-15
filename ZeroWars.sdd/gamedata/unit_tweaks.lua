@@ -23,8 +23,14 @@ local unit_tweaks = {
             morphtime_6 = 1,
             morphto_7 = [[heroflea]],
             morphcost_7 = 1,
-            morphtime_7 = 1
+            morphtime_7 = 1,
+            morphto_8 = [[herojugglenaught]],
+            morphcost_8 = 1,
+            morphtime_8 = 1
         }
+    },
+    asteroid = {
+        metalCost = 0,
     },
     factorycloak = {
         buildoptions = {
@@ -346,6 +352,10 @@ local unit_tweaks = {
         minCloakDistance = 125,
         weaponDefs = { jumpbomb_DEATH = { areaOfEffect = 180 } }
     },
+
+    missileslow = { weaponDefs = { WEAPON  = { range = 5500, } } },
+    tacnuke = { weaponDefs = { WEAPON  = { range = 4000, } } },
+
     shieldbomb = { weaponDefs = { shieldbomb_DEATH = { areaOfEffect = 300 } } },
     dronecarry = { metalCost = 80, maxDamage = 80, reclaimable = true },
     dronelight = { metalCost = 60, maxDamage = 150, reclaimable = true },
